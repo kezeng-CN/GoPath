@@ -1,8 +1,6 @@
-package fib
+package fibonacci_test
 
-import (
-	"testing"
-)
+import "testing"
 
 func TestFibList(t *testing.T) {
 	a := 1
