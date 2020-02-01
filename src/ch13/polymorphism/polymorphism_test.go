@@ -1,8 +1,9 @@
 package polymorphism_test
 
-import "testing"
-
-import "fmt"
+import (
+	"fmt"
+	"testing"
+)
 
 type Code string
 

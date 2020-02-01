@@ -7,16 +7,14 @@ import (
 )
 
 func service() string {
-	fmt.Println("service on")
 	time.Sleep(time.Millisecond * 50)
-	fmt.Println("service off")
 	return "Done"
 }
 
 func otherTask() {
-	fmt.Println("something on")
+	fmt.Println("working on something else")
 	time.Sleep(time.Millisecond * 100)
-	fmt.Println("something off")
+	fmt.Println("Task is done.")
 }
 
 func TestService(t *testing.T) {
@@ -25,12 +23,13 @@ func TestService(t *testing.T) {
 }
 
 func asyncService() chan string {
+	// retCh := make(chan string)
 	retCh := make(chan string, 1)
 	go func() {
 		ret := service()
-		fmt.Println("async on")
+		fmt.Println("returned result.")
 		retCh <- ret
-		fmt.Println("async off")
+		fmt.Println("service exited.")
 	}()
 	return retCh
 }
@@ -39,4 +38,5 @@ func TestAsyncService(t *testing.T) {
 	retCh := asyncService()
 	otherTask()
 	fmt.Println(<-retCh)
+	// time.Sleep(time.Second * 1)
 }
