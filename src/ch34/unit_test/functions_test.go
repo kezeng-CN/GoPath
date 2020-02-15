@@ -1,10 +1,11 @@
 package testing
 
-import "testing"
+import (
+	"fmt"
+	"testing"
 
-import "fmt"
-
-import "github.com/stretchr/testify/assert"
+	"github.com/stretchr/testify/assert"
+)
 
 func TestSquare(t *testing.T) {
 	inputs := [...]int{1, 2, 3, 4}
