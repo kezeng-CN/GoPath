@@ -1,1 +1,1 @@
-# Go_WorkSpace
+# GoPath
